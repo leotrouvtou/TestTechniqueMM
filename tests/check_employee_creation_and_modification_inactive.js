@@ -26,7 +26,7 @@ module.exports = Object.assign(
   checkEmployeePage(),
   createEmployee(),
   checkEmployeeCreated(),
-  modifyEmployeeBirthDate(),
+  modifyEmployeeBirthDate("24/07/2002"),
   modifyEmployeeNSS()
 )
 

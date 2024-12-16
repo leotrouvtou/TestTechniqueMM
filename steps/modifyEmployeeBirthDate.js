@@ -1,11 +1,11 @@
-module.exports = function(dateToCheck='') {
+module.exports = function(dateToPut, dateToCheck='') {
   let commandName = `On modifie la date de naissance du salarié ${browser.options.employeeEmail}`
   let command = function(browser) {
 
     browser
       .waitForElementVisible('mm-employee-detailed button')
       .clickButtonByChildClass('[svgicon="mm-pencil"]')
-      .selectDate("24/07/2002", dateToCheck)
+      .selectDate(dateToPut, dateToCheck)
     if (dateToCheck!=''){
       browser
       .click('xpath',"//span[text()=' Annuler ']")

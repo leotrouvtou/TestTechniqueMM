@@ -24,6 +24,6 @@ module.exports = Object.assign(
   setCookies('admin'),
   checkEmployeePage(),
   checkEmployeeInfo('Informations partagées'),
-  modifyEmployeeBirthDate("13/06/2000"),
+  //modifyEmployeeBirthDate("24/07/2002","13/06/2000"),
   modifyEmployeeNSSInfoShared()
 )

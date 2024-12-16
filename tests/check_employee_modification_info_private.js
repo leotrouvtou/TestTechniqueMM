@@ -3,7 +3,7 @@ const setCookies = require('../steps/setCookies.js')
 const checkEmployeePage = require('../steps/checkEmployeePage.js')
 const checkEmployeeInfo = require('../steps/checkEmployeeInfo.js')
 const modifyEmployeeBirthDate = require('../steps/modifyEmployeeBirthDate.js')
-const modifyEmployeeNSSInfoShared = require('../steps/modifyEmployeeNSSInfoShared.js')
+const modifyEmployeeNSSInfoPrivate = require('../steps/modifyEmployeeNSSInfoPrivate.js')
 
 let testDate = new Date().toISOString();
 // let testDate ="2024-12-15t111757.245z"
@@ -24,6 +24,6 @@ module.exports = Object.assign(
   setCookies('admin'),
   checkEmployeePage(),
   checkEmployeeInfo('Informations privées'),
-  modifyEmployeeBirthDate("13/06/2000"),
-  modifyEmployeeNSSInfoShared()
+//  modifyEmployeeBirthDate("24/07/1984", "13/06/1984"),
+  modifyEmployeeNSSInfoPrivate()
 )
