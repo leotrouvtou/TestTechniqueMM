@@ -1,21 +1,18 @@
-module.exports = function(dateToPut, dateToCheck='') {
+module.exports = function(dateToPut) {
   let commandName = `On modifie la date de naissance du salarié ${browser.options.employeeEmail}`
   let command = function(browser) {
 
     browser
       .waitForElementVisible('mm-employee-detailed button')
       .clickButtonByChildClass('[svgicon="mm-pencil"]')
-      .selectDate(dateToPut, dateToCheck)
-    if (dateToCheck!=''){
-      browser
-      .click('xpath',"//span[text()=' Annuler ']")
-    } else {
-      browser
-        .click('[type="submit"]')
-    }
-    browser
+      .selectDate(dateToPut)
+      .click('[type="submit"]')
       .waitForElementPresent('[svgicon="mm-pencil"]')
-      .pause(10000)
+      .clickButtonByChildClass('[svgicon="mm-pencil"]')
+      .scrollToElementByID("birth-date")
+      .assert.valueContains('#birth-date input', dateToPut, "birthdate should be "+dateToPut)
+      .click('[type="submit"]')
+
 
   }
   return { [commandName]: command }

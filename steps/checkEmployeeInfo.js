@@ -9,13 +9,11 @@ module.exports = function(status) {
       .waitForElementPresent('[class="employee-info-name"]', "un élément de la liste des salariés est présent", 15000)
       .assert.textContains('[class="employee-info-name"]', browser.options.employeeFullName)
       .assert.textContains('.private-information', status)
-      .checkTextExists('span',' 1 Salarié ')
+      .assert.textContains('.total-employees span', '1 SALARIÉ')
       .click('xpath', "//div[text()=' "+browser.options.employeeFullName+" ']")
       .waitForElementVisible('.lead-container')
       .checkTextExists('span', 'Mme '+browser.options.employeeFullName)
-      //.checkTextExists('span', browser.options.employeeEmail)
       .assert.textContains('#position', 'À compléter')
-      //.assert.textContains('#birth-date', 'À compléter')
-        }
+  }
   return { [commandName]: command }
 }

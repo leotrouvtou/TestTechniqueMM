@@ -4,7 +4,8 @@ module.exports = function() {
     browser
       .pause(5000)
       .click('[href="/employees"]')
-      //.checkTextExists('div', ' Postes ')
+//      .waitForSpinnerToBeInactive(1, 15, '.mdc-circular-progress__gap-patch')
+      .waitForElementPresent('[class="employee-info-name"]', "un élément de la liste des salariés est présent", 15000)
       .checkTextExists('div', "Statut")
       .checkTextExists('label', "Tags")
       .waitForElementPresent('[href="/employees/tags-manager"]', "l'onglet des tags est accessible")
