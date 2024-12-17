@@ -5,7 +5,8 @@ module.exports = function(phone) {
     browser
       .waitForElementVisible('mm-employee-detailed button')
       .clickButtonByChildClass('[svgicon="mm-pencil"]')
-      .assert.valueContains('#phone input', '', "phone should be empty")
+      .assert.valueContains('#phone input', '+33614567890', "phone should be empty")
+          .clearValue('#phone input')
       .sendKeys('#phone input', phone)
       .scrollToElementByID("last-medical-visit-day")
       .click('[type="submit"]')
@@ -14,6 +15,11 @@ module.exports = function(phone) {
       .scrollToElementByID("phone")
       .assert.valueContains('#phone input', '+33'+phone.substring(1), "phone should be "+phone)
       .clearValue('#phone input')
+      .sendKeys('#phone input', '0614567890')
+      .click('[type="submit"]')
+      .waitForElementVisible('mm-employee-detailed button')
+      .clickButtonByChildClass('[svgicon="mm-pencil"]')
+      .assert.valueContains('#phone input', '+33614567890', "phone should be empty +33614567890")
       .click('[type="submit"]')
 
   }
