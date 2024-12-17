@@ -1,5 +1,5 @@
   module.exports = function(name) {
-  let commandName = `On définie les cookie de ${name}`
+  let commandName = `We set the cookies for ${name}`
   let command = function(browser) {
     browser
       .cookies.set(  {

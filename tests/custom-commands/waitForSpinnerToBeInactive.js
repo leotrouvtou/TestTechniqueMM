@@ -7,13 +7,15 @@ exports.command = function(step, stepMax, spinnerclass) {
       pauseTime = step/2*1000;
 
   function checkSpinnerActive() {
-    browser.pause(1000)
     browser
-      .execute(function(spinnerclass) {
-      var elements = document.getElementsByClassName(spinnerclass)
-      console.log(elements)
-    }, [spinnerclass], function(result) {})
-      //.getText(el, function(result) {
+      .pause(1000)
+      .waitForElementPresent('[class="employee-info-name"]', "one item from te employee list should be present", 15000)
+    // browser
+    //   .execute(function(spinnerclass) {
+    //   var elements = document.getElementsByClassName(spinnerclass)
+    //   console.log(elements)
+    // }, [spinnerclass], function(result) {})
+    //.getText(el, function(result) {
       //   if(result.value.match(text)){
       //     console.log('Found text ' + text + ' after ' + time + ' seconds!');
       //     out = true;

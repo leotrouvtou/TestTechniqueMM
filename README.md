@@ -1,6 +1,6 @@
-Test techniuqe MM
+Test technique MM
 
-this scriptis an end to end test repository used to create, update, and run the MM e2e/functional tests
+this script is an end to end test repository used to create, update, and run the MM e2e/functional tests
 
 ## Install
 
@@ -38,8 +38,8 @@ If that doesn't work, go on http://127.0.0.1:4444/wd/hub/ and select a browser t
 
 You should have somme credentials in you env variable
 
-export MMLOGIN=email
-export MMPASSWORD=password
+- export MMLOGIN=email
+- export MMPASSWORD=password
 
 
 node_modules/nightwatch/bin/nightwatch tests/connect.js

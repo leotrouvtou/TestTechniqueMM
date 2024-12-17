@@ -1,12 +1,12 @@
 module.exports = function(phone) {
-  let commandName = `On modifie le bic du salarié ${browser.options.employeeEmail}`
+  let commandName = `We modify the phone numbre for ${browser.options.employeeEmail}`
   let command = function(browser) {
 
     browser
       .waitForElementVisible('mm-employee-detailed button')
       .clickButtonByChildClass('[svgicon="mm-pencil"]')
       .assert.valueContains('#phone input', '+33614567890', "phone should be empty")
-          .clearValue('#phone input')
+      .clearValue('#phone input')
       .sendKeys('#phone input', phone)
       .scrollToElementByID("last-medical-visit-day")
       .click('[type="submit"]')

@@ -1,17 +1,15 @@
 module.exports = function() {
-  let commandName = `On vérifie la page salariés`
+  let commandName = `We check the employee page`
   let command = function(browser) {
     browser
       .pause(5000)
       .click('[href="/employees"]')
-//      .waitForSpinnerToBeInactive(1, 15, '.mdc-circular-progress__gap-patch')
-      .waitForElementPresent('[class="employee-info-name"]', "un élément de la liste des salariés est présent", 15000)
+      .waitForSpinnerToBeInactive(1, 15, '.mdc-circular-progress__gap-patch')
       .checkTextExists('div', "Statut")
       .checkTextExists('label', "Tags")
-      .waitForElementPresent('[href="/employees/tags-manager"]', "l'onglet des tags est accessible")
-      .waitForElementPresent('[href="/employees"]', "le lien salariés est présent")
-      .waitForElementPresent('[href="/administration"]', "le lien administration est présent")
-      .waitForElementPresent('[class="employee-info-name"]', "un élément de la liste des salariés est présent", 15000)
+      .waitForElementPresent('[href="/employees/tags-manager"]', "the tag tab should be there")
+      .waitForElementPresent('[href="/employees"]', "the employee link should be there")
+      .waitForElementPresent('[href="/administration"]', "the admin link should be there")
   }
   return { [commandName]: command }
 }

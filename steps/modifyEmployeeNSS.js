@@ -1,5 +1,5 @@
 module.exports = function() {
-  let commandName = `On modifie le NSS du salarié ${browser.options.employeeEmail}`
+  let commandName = `We modify the NSS for employee ${browser.options.employeeEmail}`
   let command = function(browser) {
 
     browser

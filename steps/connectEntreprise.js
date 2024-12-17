@@ -1,5 +1,5 @@
 module.exports = function() {
-  let commandName = `Connexion au portail entreprise`
+  let commandName = `We connect the entreprise portal`
   let command = function(browser) {
     browser
       .url(`${browser.baseUrl}`)
