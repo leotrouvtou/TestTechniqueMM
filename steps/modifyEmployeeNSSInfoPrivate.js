@@ -9,6 +9,8 @@ module.exports = function() {
       //.checkTextExists('div', ' Numéro sécu. sociale français ')
       //.assert.textContains('[role="tabpanel"]', 'NUMÉRO SÉCU. SOCIALE FRANÇAIS')
       .click('xpath',"//label[text()=' Générer NTT pour salarié sans N° de sécu. français ']")
+      .checkNSSErrors()
+      .clearValue('#ssn input')
       .sendKeys('#ssn input', '292069905410811')
       .click('[type="submit"]')
       .click('xpath',"//span[text()=' CONFIRMER ']")
